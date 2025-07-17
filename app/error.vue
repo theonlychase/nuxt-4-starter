@@ -1,17 +1,11 @@
 <script setup lang="ts">
-defineProps<{ error: NuxtError }>()
+import type { NuxtError } from '#app'
 
-useHead({
-  htmlAttrs: {
-    lang: 'en'
-  }
-})
+defineProps<{ error: NuxtError }>()
 
 useSeoMeta({
   title: 'Page not found',
-  description: 'We are sorry but this page could not be found.'
-}, {
-  mode: 'server'
+  description: 'We are sorry but this page could not be found.',
 })
 </script>
 
@@ -30,5 +24,3 @@ useSeoMeta({
     <Footer />
   </UApp>
 </template>
-
-

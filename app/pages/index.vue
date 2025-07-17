@@ -1,10 +1,12 @@
 <script setup lang="ts">
 useHead({
-  templateParams: {
-    title: '',
-    description:
-      '',
-  },
+  title: 'Home',
+  meta: [
+    {
+      name: 'description',
+      content: 'Home description',
+    },
+  ],
 })
 </script>
 

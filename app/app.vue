@@ -1,32 +1,23 @@
 <script setup lang="ts">
 useHead({
-  htmlAttrs: { lang: 'en' },
   meta: [
     { charset: 'utf-8' },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
-    },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
   link: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico',
-    },
+    { rel: 'icon', href: '/favicon.ico' },
   ],
+  htmlAttrs: {
+    lang: 'en',
+  },
 })
 
-useSeoMeta(
-  {
-    title: () => '%title',
-    description: () => '%description',
-    ogDescription: () => '%description',
-    ogTitle: () => '%title',
-    twitterTitle: () => '%title',
-    twitterDescription: () => '%title',
-  },
-  { mode: 'server' },
-)
+if (import.meta.server) {
+  useSeoMeta({
+    robots: 'index, follow',
+    titleTemplate: '%s - Site Title',
+  })
+}
 </script>
 
 <template>
