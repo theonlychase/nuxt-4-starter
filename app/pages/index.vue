@@ -1,12 +1,7 @@
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'Home',
-  meta: [
-    {
-      name: 'description',
-      content: 'Home description',
-    },
-  ],
+  description: 'Home description',
 })
 </script>
 
