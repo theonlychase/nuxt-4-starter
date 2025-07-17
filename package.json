@@ -1,5 +1,5 @@
 {
-  "name": "personal-site",
+  "name": "nuxt-4-boilerplate",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,27 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nanostores/vue": "^1.0.1",
     "@nuxt/content": "^3.6.3",
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui-pro": "^3.2.0",
-    "@nuxtjs/partytown": "^1.6.0",
-    "@nuxtjs/seo": "^3.1.0",
-    "@nuxtjs/supabase": "^1.5.3",
-    "@unhead/vue": "^2.0.12",
     "@vueuse/components": "^13.5.0",
     "@vueuse/core": "^13.5.0",
     "@vueuse/nuxt": "^13.5.0",
-    "nanostores": "^1.0.1",
     "nuxt": "^4.0.0",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@iconify-json/devicon": "^1.2.31",
-    "@iconify-json/line-md": "^1.2.8",
-    "@iconify-json/lucide": "^1.2.57",
-    "@iconify-json/simple-icons": "^1.2.43",
     "@nuxt/eslint": "^1.5.2",
     "eslint": "^9.31.0",
     "eslint-plugin-vue": "^10.3.0",

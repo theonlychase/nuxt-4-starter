@@ -1,56 +1,18 @@
 <script setup lang="ts">
 useHead({
   templateParams: {
-    title: 'Home',
+    title: '',
     description:
-      'Chase Isley is a software engineer highly skilled at modern front-end architecture, design systems, and solving problems at scale.',
+      '',
   },
-})
-
-const { data } = await useAsyncData('navigation', () => {
-  return queryCollectionNavigation('blog', [
-    'description', 'icon',
-  ]).order('created', 'DESC')
 })
 </script>
 
 <template>
-  <UPageBody>
-    <LazyUPageHeader
-      class="pb-0"
-      title="Hi, I'm Chase Isley"
-      hydrate-never
+  <UPage>
+    <UPageHeader
+      title="Home"
     />
-
-    <p class="text-sm mb-4">
-      Software Engineer
-    </p>
-
-    <Typewriter
-      :data="skills"
-      class="mb-12"
-    />
-
-    <h2 class="mb-6">
-      For Fun
-    </h2>
-
-    <LazyUPageGrid hydrate-never>
-      <LazyProjectCard
-        v-for="(project) in projects"
-        :key="project.title"
-        :project="project"
-        hydrate-never
-      />
-    </LazyUPageGrid>
-
-    <h2 class="mb-2">
-      Latest Blog Posts
-    </h2>
-
-    <LazyBlogListNavigation
-      v-if="data"
-      :data="data"
-    />
-  </UPageBody>
+    <UPageBody />
+  </UPage>
 </template>

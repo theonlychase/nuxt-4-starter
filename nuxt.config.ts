@@ -3,32 +3,11 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui-pro',
-    '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/image',
     '@vueuse/nuxt',
     '@nuxt/eslint',
-    // '@nuxtjs/partytown',
-    '@nuxtjs/supabase',
   ],
-
-  plugins: ['~/plugins/unhead-v2'],
-
-  $development: {
-    runtimeConfig: { public: { baseUrl: 'http://localhost:8888' } },
-    vite: {
-      optimizeDeps: {
-        include: [
-          '@unhead/schema-org/vue',
-          '@vue/devtools-core',
-          '@vue/devtools-kit',
-          '@tanstack/vue-table',
-        ],
-      },
-    },
-  },
-
-  $production: { runtimeConfig: { public: { baseUrl: process.env.BASE_URL } } },
 
   components: [
     {
@@ -38,17 +17,7 @@ export default defineNuxtConfig({
     },
   ],
 
-  app: {
-    pageTransition: false,
-    layoutTransition: false,
-  },
-
   css: ['~/assets/css/tailwind.css'],
-
-  site: {
-    url: 'https://chaseisley.dev',
-    name: 'Chase Isley',
-  },
 
   colorMode: { classSuffix: '' },
 
@@ -70,97 +39,9 @@ export default defineNuxtConfig({
     experimental: { nativeSqlite: true },
   },
 
-  ui: {
-    fonts: false,
-    theme: {
-      colors: [
-        'primary',
-        'secondary',
-        'info',
-        'success',
-        'warning',
-        'error',
-        'amber',
-        'fuchsia',
-        'orange',
-        'purple',
-        'sky',
-        'teal',
-      ],
-    },
-  },
-
-  runtimeConfig: {
-    public: {
-      emailId: '',
-      emailKey: '',
-      studioTokens: process.env.STUDIO_TOKENS,
-      templateId: '',
-    },
-  },
-
-  future: { compatibilityVersion: 4 },
-
-  features: { devLogs: true },
-
-  experimental: { inlineRouteRules: true },
-
-  nitro: {
-    netlify: {
-      images: {
-        remote_images: [
-          'https://picsum.photos/.*',
-          'https://fastly.picsum.photos/.*',
-          'https://images.unsplash.com/.*',
-          'https://source.unsplash.com/.*',
-          'https://github.com/.*',
-        ],
-      },
-    },
-  },
+  compatibilityDate: '2025-07-17',
 
   eslint: { config: { stylistic: true } },
-
-  icon: {
-    serverBundle: {
-      collections: [
-        'devicon',
-        'lucide',
-        'line-md',
-        'simple-icons',
-      ],
-    },
-  },
-
-  image: {
-    provider: 'netlifyImageCdn',
-    domains: [
-      'picsum',
-      'picsum.photos',
-      'https://picsum.photos',
-      'fastly.picsum.photos',
-      'images.unsplash.com',
-      'source.unsplash.com',
-      'github.com',
-    ],
-  },
-
-  robots: {
-    disallow: [
-      '/confirm', '/profile',
-    ],
-  },
-
-  supabase: {
-    redirectOptions: {
-      login: '/login',
-      callback: '/confirm',
-      include: [
-        '/profile(/*)?', '/expense-management(/*)?',
-      ],
-      saveRedirectToCookie: true,
-    },
-  },
 
   uiPro: { license: process.env.NUXT_UI_PRO_LICENSE },
 })

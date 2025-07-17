@@ -3,11 +3,11 @@
 
 <template>
   <div id="app">
-    <Header :key="$route.meta.pageScroll" />
+    <Header />
 
-    <Page>
+    <UMain>
       <slot />
-    </Page>
+    </UMain>
 
     <Footer />
   </div>
