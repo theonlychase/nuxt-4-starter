@@ -2,12 +2,24 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
     '@nuxt/ui-pro',
     '@nuxt/content',
-    '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxt/eslint',
   ],
+
+  $development: {
+    vite: {
+      optimizeDeps: {
+        include: [
+          '@vue/devtools-core',
+          '@vue/devtools-kit',
+          '@nuxt/content/utils',
+        ],
+      },
+    },
+  },
 
   components: [
     {
@@ -39,7 +51,7 @@ export default defineNuxtConfig({
     experimental: { nativeSqlite: true },
   },
 
-  compatibilityDate: '2025-07-17',
+  compatibilityDate: '2025-08-10',
 
   eslint: { config: { stylistic: true } },
 
